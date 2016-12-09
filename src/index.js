@@ -14,13 +14,15 @@ class Demo extends React.Component {
         <button onClick={() => this.setState({ play: true })}>Play</button>
         <button onClick={() => this.setState({ pause: true })}>Pause</button>
         <button onClick={() => this.setState({ pause: false })}>Resume</button>
-        <button onClick={() => this.setState({ cancel: true })}>Resume</button>
 
         <VoicePlayer
-          text="Welcome to React Voice Components! Please turn off the lights before leaving"
-          lang="en-us"
           play={this.state.play}
           pause={this.state.pause}
+          text="Welcome to the jungle! We got fun and games"
+          onPause={() => console.info('pause')}
+          onResume={() => console.info('resume')}
+          onStart={() => console.info('start')}
+          onEnd={() => console.info('end')}
         />
       </div>
     )
@@ -31,3 +33,4 @@ ReactDOM.render(
   <Demo />,
   document.getElementById('root')
 )
+
