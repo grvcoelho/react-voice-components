@@ -1,29 +1,78 @@
-import { Component } from 'react'
-import { defaultTo } from 'ramda'
+import React, { Component as Component } from 'react'
 
 class VoicePlayer extends Component {
-  buildSpeech = () => {
+  constructor (props) {
+    super(props)
+
+    if ('speechSynthesis' in window) {
+      this.speech = this.createSpeech()
+    }
+
+    this.state = {
+      started: false,
+      playing: false
+    }
+  }
+
+  createSpeech = () => {
+    const defaults = {
+      text: '',
+      volume: 1,
+      rate: 1,
+      pitch: 1,
+      lang: 'en-US'
+    }
+
+    const options = Object.assign({}, defaults, this.props)
+
     let speech = new SpeechSynthesisUtterance()
 
-    speech.text = defaultTo('', this.props.text)
-    speech.volume = defaultTo(1, this.props.volume)
-    speech.rate = defaultTo(1, this.props.rate)
-    speech.pitch = defaultTo(1, this.props.pitch)
-    speech.lang = defaultTo('en-UK', this.props.lang)
+    speech.text = options.text
+    speech.volume = options.volume
+    speech.rate = options.rate
+    speech.pitch = options.pitch
+    speech.lang = options.lang
 
     return speech
   }
 
-  componentWillMount () {
-    if ('speechSynthesis' in window) {
-      this.speech = this.buildSpeech()
+  speak = () => {
+    window.speechSynthesis.speak(this.speech)
+    this.setState({ started: true, playing: true })
+  }
+
+  cancel = () => {
+    window.speechSynthesis.cancel()
+    this.setState({ started: false, playing: false })
+  }
+
+  pause = () => {
+    window.speechSynthesis.pause()
+    this.setState({ playing: false })
+  }
+
+  resume = () => {
+    window.speechSynthesis.resume()
+    this.setState({ playing: true })
+  }
+
+  componentWillReceiveProps ({ pause }) {
+    if (pause && this.state.playing && this.state.started) {
+      return this.pause()
     }
+
+    if (!pause && !this.state.playing && this.state.started) {
+      return this.resume()
+    }
+  }
+
+  shouldComponentUpdate () {
+    return false
   }
 
   componentDidMount () {
     const events = [
       { name: 'start', action: this.props.onStart },
-      { name: 'end', action: this.props.onEnd },
       { name: 'error', action: this.props.onError },
       { name: 'pause', action: this.props.onPause },
       { name: 'resume', action: this.props.onResume }
@@ -33,7 +82,18 @@ class VoicePlayer extends Component {
       this.speech.addEventListener(e.name, e.action)
     })
 
-    window.speechSynthesis.speak(this.speech)
+    this.speech.addEventListener('end', () => {
+      this.setState({ started: false })
+      this.props.onEnd()
+    })
+
+    if (this.props.play) {
+      this.speak()
+    }
+  }
+
+  componentWillUnmount () {
+    this.cancel()
   }
 
   render () {
