@@ -1,9 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import VoicePlayer from './voice-player'
 
 ReactDOM.render(
-  <App />,
+  <VoicePlayer
+    text="Welcome to React Voice Components! Please turn off the lights before leaving"
+    lang="en-us"
+    onEnd={() => alert('finished')}
+  />,
   document.getElementById('root')
-);
+)
