@@ -27,6 +27,7 @@ $ npm install --save react-voice-components
       text="React voice player demonstration"
     />,
     document.getElementById('root')
+  )
   ```
 
 ## API
