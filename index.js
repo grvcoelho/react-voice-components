@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import VoicePlayer from './voice-player'
+import VoicePlayer from './lib/voice-player'
 
 class Demo extends React.Component {
   state = {
