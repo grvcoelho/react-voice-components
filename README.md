@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/grvcoelho/react-voice-components.svg?branch=master)](https://travis-ci.org/grvcoelho/react-voice-components)
 
-Set of React components that use the Web Speech API to bring voice experience to React applications
+Set of React components that use the Web Speech API to bring voice experience to React applications. Check out the [**LIVE DEMO**](https://grvcoelho.github.io/react-voice-components/?)
 
 ## Install
 
@@ -84,3 +84,6 @@ Provides you a simple React component to do voice recognition (speech to text).
 3. Commit your changes: `git commit -m 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
+
+## LICENSE
+[MIT](https://github.com/grvcoelho/react-voice-components/blob/master/LICENSE) (c) 2017 Guilherme Rv Coelho
