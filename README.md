@@ -36,7 +36,7 @@ $ npm install --save react-voice-components
 
 ### `<VoicePlayer />`
 
-Provides you a simple DOM API to do speech synthesis (text to speech).
+Provides you a simple React component to do speech synthesis (text to speech).
 
 #### Options
 
@@ -56,6 +56,26 @@ Provides you a simple DOM API to do speech synthesis (text to speech).
 | onPause  | Runs when te speech is paused.               |
 | onResume | Runs when the speech is resumed.             |
 
+
+### `<VoiceRecognition />`
+
+Provides you a simple React component to do voice recognition (speech to text).
+
+#### Options
+
+| Property   | Options   | Description                                                                       |
+|------------|-----------|-----------------------------------------------------------------------------------|
+| continuous | *boolean* | Specifies if the recognition should continue when the user pauses while speaking. |
+| stop       | *boolean* | Specifies if the recognition should be stoped (when used with `continuous=true`)  |
+
+#### Event Callbacks
+
+| Property | Description                              |
+|----------|------------------------------------------|
+| onStart  | Runs when the recognition starts.        |
+| onEnd    | Runs when the recognition ends.          |
+| onError  | Runs when there is a recognition result. |
+| onResult | Runs when there is a recognition error.  |
 
 ## Contributing
 
