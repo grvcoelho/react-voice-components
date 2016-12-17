@@ -1,4 +1,4 @@
-import VoicePlayer from './lib/voice-player'
-import VoiceRecognition from './lib/voice-recognition'
+import VoicePlayer from './lib/VoicePlayer'
+import VoiceRecognition from './lib/VoiceRecognition'
 
 export { VoicePlayer, VoiceRecognition }

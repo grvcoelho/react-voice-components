@@ -17,6 +17,7 @@
   "license": "MIT",
   "homepage": "https://github.com/grvcoelho/react-voice-components",
   "devDependencies": {
+    "@kadira/storybook": "^2.34.0",
     "babel-core": "^6.20.0",
     "babel-loader": "^6.2.9",
     "babel-plugin-transform-react-jsx": "^6.8.0",
@@ -31,6 +32,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --port 3000",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }
