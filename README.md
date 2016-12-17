@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/grvcoelho/react-voice-components.svg?branch=master)](https://travis-ci.org/grvcoelho/react-voice-components)
 
-Set of React components that use the Web Speech API to bring voice experience to React applications. Check out the [**LIVE DEMO**](https://grvcoelho.github.io/react-voice-components/?)
+Set of React components that use the Web Speech API to bring voice experience to React applications. Check out the :sparkles: :gem: [**LIVE DEMO**](https://grvcoelho.github.io/react-voice-components/?) :gem: :sparkles:
 
 ## Install
 
