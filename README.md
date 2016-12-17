@@ -1,5 +1,7 @@
 # react-voice-components
 
+[![Build Status](https://travis-ci.org/grvcoelho/react-voice-components.svg?branch=master)](https://travis-ci.org/grvcoelho/react-voice-components)
+
 Set of React components that use the Web Speech API to bring voice experience to React applications
 
 ## Install
