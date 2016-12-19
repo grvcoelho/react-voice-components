@@ -1,6 +1,6 @@
 {
   "name": "react-voice-components",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Set of React components that use the Web Speech API to bring voice experience to React applications",
   "main": "index.js",
   "repository": {
