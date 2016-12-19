@@ -74,8 +74,8 @@ Provides you a simple React component to do voice recognition (speech to text).
 |----------|------------------------------------------|
 | onStart  | Runs when the recognition starts.        |
 | onEnd    | Runs when the recognition ends.          |
-| onError  | Runs when there is a recognition result. |
-| onResult | Runs when there is a recognition error.  |
+| onError  | Runs when there is a recognition error.  |
+| onResult | Runs when there is a recognition result. |
 
 ## Contributing
 
