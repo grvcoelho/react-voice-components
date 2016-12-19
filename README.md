@@ -17,7 +17,7 @@ $ npm install --save react-voice-components
 1. Import components:
 
   ```javascript
-  import { VoicePlayer } from 'react-voice-components'
+  import { VoicePlayer, VoiceRecognition } from 'react-voice-components'
   ```
 
 2. Use it:
